@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #6B59D0;
+  --secondary-color: #DEDDEB;
+  --text-color: #6B7280;
+  --text-color-second: #374151;
+  --background-color: #FFF;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.125rem;
+  background-color: var(--background-color);
+  background-size: 100% ;
+
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+.bg img {
+  width: 100%;
+}
+
+/* container */
+.container {
+  width: 1130px;
+  max-width: 1280px;
+  margin: 13rem auto 5rem;
+  padding: 20px;
+}
+
+/* Header */
+.header span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 12px auto 20px;
+}
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color-second);
+  margin-bottom: 80px;
+  margin-top: 20px;
+  width: 60%;
+}
+
+/* Content */
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 20px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50rem;
+  bottom: -8rem;
+  left: -20px;
+  width: 1px;
+  border-left: 2px dashed var(--secondary-color);
+  z-index: -1; 
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color-second);
+  margin-top: 32px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card h2::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -20px;
+  width: 2px;
+  height: 24px;
+  background-color: var(--primary-color);
+  margin-right: 20px;
+}
+
+.card span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card p {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+/* Footer */
+.author-info {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+  color: rgb(55, 65, 81);
+}
+
+.author-info a {
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 40%;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .bg img {
+    width: auto;
+    height: 100%;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+ .card:nth-child(odd)::before {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+}
